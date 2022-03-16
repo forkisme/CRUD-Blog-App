@@ -44,11 +44,11 @@ function App() {
         <Route path="/" render={()=><LoginPage/>} exact/>
         <Route path="/register" render={()=><SignUpPage/>} />
         <Navbar windowSize={width}/>
-        <Route path = "/home" component={()=><HomePage postsData={postsData} windowSize={width}/>} exact/>
-        <Route path = "/home/:id" exact component={()=><PostPage posts = {postsData}/>} />
-        <Route path="/edit/:id" component={()=><EditPost posts={postsData}/>} />
-        <Route path = "/create" component={()=><CreatePostPage/>} />
-        <Route path = "/posts" component={()=><MyPostsPage postsData={postsData} windowSize={width}/>} />
+        <Route path = "/home" render={()=><HomePage postsData={postsData} windowSize={width}/>} exact/>
+        <Route path = "/home/:id" exact render={()=><PostPage posts = {postsData}/>} />
+        <Route path="/edit/:id" render={()=><EditPost posts={postsData}/>} />
+        <Route path = "/create" render={()=><CreatePostPage/>} />
+        <Route path = "/posts" render={()=><MyPostsPage postsData={postsData} windowSize={width}/>} />
         <Footer/>
       </main>
     </BrowserRouter>
