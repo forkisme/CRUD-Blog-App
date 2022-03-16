@@ -46,7 +46,6 @@ const LoginPage = () => {
                 </div>
                 <form onSubmit={handleLogin}>
                     {/*USERNAME*/}
-                    <input />
                     <div id='username-signup'>
                         <div id='username-signup-placeholder'>
                             <AiOutlineUser id='username-icon' size={20} opacity={0.3}/>
