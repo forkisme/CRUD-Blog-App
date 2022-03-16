@@ -42,7 +42,7 @@ function App() {
     <BrowserRouter>
       <main>
         <Route path="/" render={()=><LoginPage/>} exact/>
-        <Route path="/register" component={SignUpPage} />
+        <Route path="/register" render={()=><SignUpPage/>} />
         <Navbar windowSize={width}/>
         <Route path = "/home" component={()=><HomePage postsData={postsData} windowSize={width}/>} exact/>
         <Route path = "/home/:id" exact component={()=><PostPage posts = {postsData}/>} />
