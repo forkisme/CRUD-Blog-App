@@ -41,7 +41,7 @@ function App() {
   return (
     <BrowserRouter>
       <main>
-        <Route path="/" component={()=><LoginPage/>} exact/>
+        <Route path="/" component={LoginPage} exact/>
         <Route path="/register" component={()=><SignUpPage/>} />
         <Navbar windowSize={width}/>
         <Route path = "/home" component={()=><HomePage postsData={postsData} windowSize={width}/>} exact/>
