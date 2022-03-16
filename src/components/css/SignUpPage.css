@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;502&family=Open+Sans:wght@549&family=Poppins:wght@400;700;900&family=Roboto&display=swap');
 
-input[type='text'], input[type='email'], input[type='search'],input[type='password'], textarea{
-  -webkit-user-select: text;
-}
 
 /* ===================================================SIGNUP PAGE CSS==========================================================*/
 .login-signup-mainframe{
