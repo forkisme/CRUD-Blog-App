@@ -55,7 +55,7 @@ const SignUpPage = () => {
                     <div id='firstname-signup'>
                         <div id='firstname-signup-placeholder'>
                             <AiOutlineUser id='firstname-icon' size={20} opacity={0.3}/>
-                            <input id='firstname-text-signup' type="text" placeholder="First Name" onChange={(e)=>setFirstName(e.target.value)}/>
+                            <input id='firstname-text-signup' placeholder="First Name" onChange={(e)=>setFirstName(e.target.value)}/>
                         </div>
                     </div>
                     
