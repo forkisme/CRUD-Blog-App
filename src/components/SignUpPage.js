@@ -28,6 +28,15 @@ const SignUpPage = () => {
         if(password !== confirmPassword){
             return alert("The password does not match with the confirm field");
         }
+        if(userName.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )){
+            //if username matches email regex...
+            return alert("Email themed usernames not allowed");
+        }
+        if(userName.length>30||password.length>30){
+            //prevent idlers from putting longgg strings in the DB trying to crash it...
+            return alert("Username and/or password too long!");
+        }
         try{
             axios.post('https://nameless-ocean-20366.herokuapp.com/test/register',{ "firstname":firstName,"lastname":lastName,"user":userName,"pwd":password })
             .then((response)=>{
