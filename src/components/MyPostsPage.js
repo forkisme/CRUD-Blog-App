@@ -7,7 +7,7 @@ import { BsChatLeftDots } from "react-icons/bs";
 import { FcSearch } from "react-icons/fc";
 
 
-const MyPostsPage = ({ postsData,windowSize }) => {
+const MyPostsPage = ({ postsData }) => {
     const history=useHistory();
     const [search,setSearch] = useState('');
     useEffect(()=>{
@@ -31,80 +31,52 @@ const MyPostsPage = ({ postsData,windowSize }) => {
                         
             </div>   
             {/*Generate boxes*/}
-            {windowSize >= 450 ?
-            //LAPTOP DISPLAY
-                (userPosts.map((item)=>(
-                    
+            <div className='cards-container'>
+                {/*Generate boxes*/}
+                {(userPosts.map((item)=>(
                     <li key={item._id} style={{ listStyleType: "none" }}>
                         <div className='card-box'>
-                            <div className='content-box'>
-                            <Link to={`/home/${item._id}`} style={{ textDecoration:'none' }}><p className='card-title'>{item.title.length<=10 ? item.title : `${item.title.slice(0,8)}...`}</p></Link>
-                                <p className='card-body-text'>{item.body.length<=15 ? item.body : `${item.body.slice(0,15)}...`}</p>
+                            <Link to={`/home/${item._id}`} style={{ textDecoration:'none' }}><div className='box-header'>
+                                {item.title.length<=18 ? item.title : `${item.title.slice(0,15)}...`}
+                            </div></Link>
+                            <div className='box-content'>
+                                <p className='body-title'>Body</p>
+                                <p className='body-text'>
+                                    {item.body.length<280 ? item.body : `${item.body.slice(0,275)}...`}
+                                </p>
+                                <div className='card-info-box'>
+                                    <div className='card-info'>
+                                        <div className='card-info-title'>
+                                            {/*ICON*/}
+                                            <AiOutlineUser size={14}/>
+                                            <p className='card-info-title-text'>Author</p>
+                                        </div>
+                                        <p className='card-info-text'>{item.username.length <= 15 ? item.username : `${item.username.slice(0,12)}...`}</p>
+                                    </div>
+                                    <div className='card-info'>
+                                        <div className='card-info-title'>
+                                            {/*ICON*/}
+                                            <HiOutlineClock size={14}/>
+                                            <p className='card-info-title-text'>Date</p>
+                                        </div>
+                                        <p className='card-info-text'>{new Date(item.date).toLocaleDateString("en-US")}</p>
+                                    </div>
+                                    <div className='card-info'>
+                                        <div className='card-info-title'>
+                                            {/*ICON*/}
+                                            <BsChatLeftDots size={12} />
+                                            <p className='card-info-title-text'>Comments</p>
+                                        </div>
+                                        <p className='card-info-text'>{item.comments.length}</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className='info-box'>
-                                <div className='author-box'>
-                                    {/* ICON */}
-                                    
-                                    <AiOutlineUser className='author-icon' size={11}/>
-                                    
-                                    <p className='author-text'>{item.username.length <= 7 ? item.username : `${item.username.slice(0,7)}...`}</p>
-                                </div>
-                                <div className='date-box'>
-                                    {/* ICON */}
-                                    <HiOutlineClock className='author-icon' size={11}/>
-                                    <p className='date-text'>{new Date(item.date).toLocaleDateString("en-US")}</p>
-                                </div>
-                                <div className='comment-box'>
-                                    {/* ICON */}
-                                    <BsChatLeftDots className='author-icon' size={11}/>
-                                    <p className='comment-text'>{item.comments.length}</p>
-                                </div>
-
-                            </div>
-                        </div>
-                            
+                        </div>    
                     </li>
-                    
-
                 )))
-                    :
-                    //TABLET/MOBILE DISPLAY
-                    (userPosts.map((item)=>(
-                        <li key={item._id} style={{ listStyleType: "none" }}>
-                            <div className='card-box-mobile'>
-                                <div className='content-box-mobile'>
-                                <Link to={`/home/${item._id}`} style={{ textDecoration:'none' }}><p className='card-title-mobile'>{item.title.length<=10 ? item.title : `${item.title.slice(0,8)}...`}</p></Link>
-                                    <p className='card-body-text-mobile'>{item.body.length<=15 ? item.body : `${item.body.slice(0,15)}...`}</p>
-                                </div>
-                                <div className='info-box-mobile'>
-                                    <div className='author-box-mobile'>
-                                        {/* ICON */}
-                                        
-                                        <AiOutlineUser className='author-icon-mobile' size={11}/>
-                                        
-                                        <p className='author-text-mobile'>{item.username.length <= 7 ? item.username : `${item.username.slice(0,7)}...`}</p>
-                                    </div>
-                                    <div className='date-box-mobile'>
-                                        {/* ICON */}
-                                        <HiOutlineClock className='author-icon-mobile' size={11}/>
-                                        <p className='date-text'>{new Date(item.date).toLocaleDateString("en-US")}</p>
-                                    </div>
-                                    <div className='comment-box-mobile'>
-                                        {/* ICON */}
-                                        <BsChatLeftDots className='author-icon-mobile' size={11}/>
-                                        <p className='comment-text-mobile'>{item.comments.length}</p>
-                                    </div>
-        
-                                </div>
-                            </div>
-
-                            
-                        </li>
-
-                        
-    
-                    )))
                 }
+            </div>
+        
         </div>
     )
 }
