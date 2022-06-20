@@ -7,6 +7,6 @@ Check it out: https://tashyn-blog2.netlify.app
 
 **NEW**
 
-Just implemented some regex to prevent persons from entering email themed usernames as the page might be flagged for phishing. All email themed accounts and their posts and comments in the MongoDB has been removed.
+- Just implemented some regex to prevent persons from entering email themed usernames as the page might be flagged for phishing. All email themed accounts and their posts and comments in the MongoDB has been removed.
 
-Updated the styling of the home page
+- Updated the styling of the home page
