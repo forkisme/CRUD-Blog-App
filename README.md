@@ -5,8 +5,8 @@ Users must sign in by creating an account to access the website. Users can creat
 
 Check it out: https://tashyn-blog2.netlify.app
 
-Will brush it up after finals by including a load screen while the data is being loaded after opening the main page as well as better looking CSS 
-
 **NEW**
 
 Just implemented some regex to prevent persons from entering email themed usernames as the page might be flagged for phishing. All email themed accounts and their posts and comments in the MongoDB has been removed.
+
+Updated the styling of the home page
