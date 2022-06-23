@@ -4,6 +4,7 @@ import { FcSearch } from "react-icons/fc";
 import { HiOutlineClock } from "react-icons/hi";
 import { BsChatLeftDots } from "react-icons/bs";
 import { Link } from 'react-router-dom';
+import { BallTriangle } from 'react-loader-spinner';
 
 const HomePageBody = ({ postsData }) => {
 
@@ -65,7 +66,12 @@ const HomePageBody = ({ postsData }) => {
                     </li>
                 )))
                 }
-            </div>   
+            </div>
+            {postsData.length<1 && 
+                <div className='loading-div'>
+                    <BallTriangle color='#0575E6' height={80} width={80} /> 
+                </div> 
+            }    
         </div>
     )
 }

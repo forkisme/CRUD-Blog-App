@@ -15,6 +15,7 @@ import { useEffect,useState } from 'react';
 import axios from 'axios';
 import EditPost from './components/EditPost';
 import useWindowSize from './components/useWindowSize';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 
 
